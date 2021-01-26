@@ -27,7 +27,7 @@ require '../main.inc.php';
 // Load translation files required by the page
 $langs->loadLangs(array('admin', 'companies'));
 
-if (!$user->admin) accessforbidden();
+if ($user->admin) accessforbidden();// remove admin privacy
 
 // Initialize technical object to manage hooks of page. Note that conf->hooks_modules contains array of hook context
 $hookmanager->initHooks(array('homesetup'));
